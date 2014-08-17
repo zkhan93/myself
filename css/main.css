@@ -19,7 +19,7 @@
 	margin:auto;
 }
 .img4{
-	font-size: smaller;
+	
 }
 .main-body{
 	background-color: #222;
@@ -34,7 +34,7 @@ h2{
 	color: #ffffff;
 }
 
-h3,h4{
+h3,h4,h5{
 	color:white;
 	background-color: #398439;
 	border-color: #3C763D;
@@ -55,6 +55,9 @@ h3,h4{
 p{
 	color:#C0C0C0;
 }
+.form-label{
+	color:#C0C0C0;
+}
 .btn-project{
 	margin-bottom: 5px;
 	font-size: large;
@@ -69,4 +72,7 @@ p{
 	list-style:none;
 	margin-bottom:10px;
 	color:#C0C0C0;
+}
+.resume-div{
+	
 }
