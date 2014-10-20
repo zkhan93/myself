@@ -8,7 +8,28 @@
 		<link href="css/main.css" rel="stylesheet" />
 		
 		<title>Zeeshan Khan</title>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    	<script src="js/bootstrap.min.js"></script>
+    	<script type="text/javascript">
+$(document).ready(function() {
+	// navigation click actions	
+	$('.scroll-link').on('click', function(event){
+		event.preventDefault();
+		var sectionID = $(this).attr("data-id");
+		scrollToID('#' + sectionID, 750);
+	});
+});
+// scroll function
+function scrollToID(id, speed){
+	var offSet = 0;
+	var targetOffset = $(id).offset().top - offSet;
+	
+	$('.projects').animate({scrollTop:targetOffset}, speed);
+	
+}
+
+</script>
 		<meta name="author" content="Zeeshan Khan" />
 		<!-- Date: 2014-08-15 -->
 	</head>
@@ -16,14 +37,13 @@
 		
 		<div class="container">
 			<div class="row">
-			<div class="container container-outer col-md-3 ">
+			<div class="container container-outer col-md-3 col-md-offset-0 col-xs-10 col-xs-offset-1">
 				<div class="row text-center">
-					<div class="img-thumbnail img1 col-md-12">
-						
+					<div class="img-thumbnail img1 ">
 						<img class="img-responsive" src="./images/ppp.png"/> 
 						<h2 class="text-center">Zeeshan Khan</h2>
 					</div>
-					<div class="img-thumbnail col-md-12 col-xs-12">
+					<div class="img-thumbnail ">
 						<h4 class="text-center">Find Me On <span class="glyphicon glyphicon-hand-down"></span></h4><br>
 						<a alt="Facebook" title="Facebook" href="https://www.facebook.com/zeeshankhan.1001"><img src="./images/facebook.png"/></a>
 						<a alt="Google Plus" title="Google Plus" href="https://www.google.com/+ZeeshanKhan93"><img src="./images/google.png"/></a>
@@ -37,18 +57,18 @@
 					
 				</div>
 		</div>
-		<div class="container container-outer col-md-3 col-md-offset-1">
+		<div class="container container-outer col-md-3 col-md-offset-1 col-xs-10 col-xs-offset-1">
 				<div class="row text-center">
-					<div class="img-thumbnail img2 col-md-12 col-xs-12">
+					<div class="img-thumbnail img2 ">
 						<h4 class="text-center"> About Me </h4>
 						<p class="text-center ">
 							Motivated, B.Tech final year student persuing B.Tech from S.I.E.T Jhalwa, affiliated to GBTU luncknow.
-							Currently resides in Allahabad and is a keen and quick learner, and also aims to become a hard core programmer.
+							Currently resides in Allahabad and is a keen and quick learner, and aims to become a hard core programmer.
 						</p>
 						<hr>
 						<h4 class="text-center"> Key Skills </h4>
 						<p class="text-center ">
-							Have good coding and analatical skills, good command on C language, other languages known are Java, Pyhton, C#.
+							Have good coding and analatical skills, good command on C language, other languages known are Java, Python, C#.
 						</p>
 						<hr>
 						<h4 class="text-center"> Achievements </h4>
@@ -59,27 +79,28 @@
 					</div>
 				</div>
 		</div>	
-		<div class="container container-outer col-md-4 col-md-offset-1">
+		<div class="container container-outer col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1">
 				<div class="row text-center">
 					
-					<div class="img-thumbnail img3 col-md-12 col-xs-12">
+					<div class="img-thumbnail img3">
 						<div>
 							<div id="scroller1" class="dropdown">
 							<button class="btn btn-primary btn-block dropdown-toggle btn-project" type="button" data-toggle="dropdown">
 									Projects <span class="glyphicon glyphicon-chevron-down"></span>
 							</button>
 							<ul class="dropdown-menu btn-block" >
-								<li class="dropdown-item"><a href="#androidapp">Android Application</a></li>
-							    <li class="dropdown-item"><a href="#letschat">Let's Chat</a></li>
-							    <li class="dropdown-item"><a href="#staticwebsite">Static Website</a></li>
+								<li class="dropdown-item"><a class="scroll-link" href="#" data-id="androidapp">Android Application</a></li>
+							    <li class="dropdown-item"><a class="scroll-link" href="#" data-id="letschat">Let's Chat</a></li>
+							    <li class="dropdown-item"><a class="scroll-link" href="#" data-id="staticwebsite">Static Website</a></li>
 							</ul>
 						</div>
 						</div>
-						<div data-spy="scroll" data-target="#scroller1" class="projects">
+						<div id="pscroll" data-spy="scroll" data-target="#scroller1" class="projects">
 							<h4 id="androidapp" class="text-center">Android Application <span class="glyphicon glyphicon-refresh"></span></h4>
-							<p class="text-center">Currently working to develop a android application for our collage student and faculty through which they can interact or chat with each other and
+							<p class="text-center">Currently working to develop a android application for our college student and faculty through which they can interact or chat with each other and
 								 any information can be send to all the faculty members as well as students.</p>
 							<a href="#androidapp" class="btn btn-primary disabled">Show Me</a>
+							<span class="glyphicon glyphicon-gift"></span>
 							<hr>
 							<h4 id="letschat"  class="text-center">Let's Chat <span class="glyphicon glyphicon-ok"></span></h4>
 							<p class="text-center">
@@ -90,7 +111,7 @@
 							
 							<h4 id="staticwebsite"  class="text-center">Website for Baangee Club <span class="glyphicon glyphicon-ok"></span></h4>
 							<p class="text-center">
-								Build a static website using HTML,CSS and Flash(for gallery) for a Non-Government Organisation(NGO) Baangee Club.
+								Built a static website using HTML,CSS and Flash(for gallery) for a Non-Government Organisation(NGO) Baangee Club.
 							</p>
 							<a href="http://www.baangeeclub.com" class="btn btn-primary">Show Me</a>
 							<hr>
@@ -99,17 +120,19 @@
 					</div>
 				</div>
 				<div class="row text-center">
-					<div class="img-thumbnail img4 col-md-12 col-xs-12">
-						<div>
-							<h4 class="text-center">Feel Like Talking?</h4>
+					<div class="img-thumbnail img4">
+						<div >
+							<h4 class="text-center ">Feel Like Talking?</h4>
 						</div>
 						<div >
-							<form action="mailto:zkhan1093@gmail.com">
+							<form method="post" name="email-me" action="./php/mail-me.php">
 								<div class="form-group"><br/>
-									<input class="form-control" type="text" placeholder="Your Name"/><br/>
-									<input class="form-control" type="email" placeholder="Your Email"/><br/>
-									<textarea class="form-control" rows="3" placeholder="Message For Me"></textarea><br>
-									<button type="submit" class="btn btn-primary right" >Submit</button
+									<input name="name" class="form-control" type="text" placeholder="Your Name"/><br/>
+									<input name="email" class="form-control" type="email" placeholder="Your Email"/><br/>
+									<textarea name="msg" class="form-control" rows="3" placeholder="Message For Me"></textarea><br>
+									<button type="submit" class="btn btn-primary right" >Submit</button>
+									
+									<button type="reset" class="btn btn-danger right" >Reset</button>
 								</div>
 							</form>
 						</div>
@@ -120,17 +143,22 @@
 		</div>
 		<div class="row">
 		<div class="container container-outer col-md-12">
-			<div class="img-thumbnail img5 col-md-12 col-xs-12">
-				<h4 class="text-center">
+			<div class="img-thumbnail img5 col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1">
+					<h4 class="text-center">
 					Resume
-				</h4>
-				<div >
+					</h4>
+					
+				<div class="row">
 						<div class="col-md-4 resume-div">
 							<div>
 								<h5 class="text-center">Education</h5>
 							</div>
 							<div>
-								<p class="text-center">block 1 buddy</p>
+								<p class="text-center"><span class="glyphicon glyphicon-book"></span> <strong>Pursuing B.Tech (CSE) 4th year</strong><br> From G.B.T.U Lucknow aggr.70% till 3rd year </p>
+								<hr>
+								<p class="text-center"><span class="glyphicon glyphicon-book"></span> <strong>Intermediate</strong><br>from Kendriya Vidyalaya, Secured 65.8%</p>
+								<hr>
+								<p class="text-center"><span class="glyphicon glyphicon-book"></span> <strong>High School</strong><br>from Kendriya Vidyalaya, Secured 71%</p>
 							</div>
 						</div>
 						<div class="col-md-4 resume-div">
@@ -138,26 +166,38 @@
 								<h5 class="text-center">Employment</h5>
 							</div>
 							<div>
-								<p class="text-center">block 2 buddy</p>
+								<p class="text-center"><span class="glyphicon glyphicon-briefcase"></span> <strong>Been intern at TCS Lucknow</strong><br> Been with TCS on a live project 'ION' in converting PL/SQL  ETL procedures to Java.</p>
+								<hr>
+								<p class="text-center"><span class="glyphicon glyphicon-user"></span> <strong>Fresher</strong><br> Looking for a job opportunity and exploring my talent as well as skills in all directions :)</p>
+								
 							</div>
 						</div>
 						<div class="col-md-4 resume-div">
 							<div>
-								<h5 class="text-center">Extras</h5>
+								<h5 class="text-center">Certifications and Other Activities</h5>
 							</div>
 							<div>
-								<p class="text-center">block 3 buddy</p>
+								<p class="text-center"><span class="glyphicon glyphicon-certificate"></span> <strong>Java Core</strong><br>Certification of java core one month course from UPTech.</p>
+								<hr>
+								<p class="text-center"><span class="glyphicon glyphicon-certificate"></span> <strong>ASP.NET</strong><br>Certification of ASP.NET one month course from HCL.</p>
+								<hr>
+								<p class="text-center"><span class="glyphicon glyphicon-certificate"></span> <strong>Presentation</strong><br>Secured 2nd position in Seminar on “PAPER PRESENTATION” and presented a paper on “ANDROID” organized by SGI, Allahabad (EUREKA MMX’3)</p>
 							</div>
 						</div>
+						
 				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-8">
+						<a href="./resource/Zeeshan-CV.pdf"><div class="btn btn-primary btn-block center-block" >Download CV <span class="glyphicon glyphicon-download"></span></div></a>
+					</div>
+				</div>
+				
 			</div>
 		</div>	
 		</div>
 		</div>
 		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+	
 	</body>
 </html>
 
